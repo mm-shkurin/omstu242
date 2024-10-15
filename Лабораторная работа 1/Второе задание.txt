@@ -1,0 +1,17 @@
+using System;
+class HelloWorld {
+    static void Main() {
+        int a;
+        a = 2;
+        int b;
+        b = 9;
+        int max;
+        max = (a+b + Math.Abs(a-b))/2;
+        int min;
+        min = (a+b - Math.Abs(a-b))/2;
+        Console.WriteLine("Max:");
+        Console.WriteLine(max);
+        Console.WriteLine("Min:");
+        Console.WriteLine(min);
+    }
+}
