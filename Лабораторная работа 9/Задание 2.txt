@@ -1,0 +1,70 @@
+using System;
+
+class Program
+{
+    public class StringAnalyzer
+    {
+        // Поле для хранения строки
+        private string inputString;
+
+        // Свойство с геттером и сеттером
+        public string InputString
+        {
+            get { return inputString; }
+            set { inputString = value; }
+        }
+
+        // Конструктор по умолчанию
+        public StringAnalyzer()
+        {
+            inputString = string.Empty;  // Строка по умолчанию пустая
+        }
+
+        // Конструктор с параметром для инициализации строки
+        public StringAnalyzer(string input)
+        {
+            inputString = input;
+        }
+
+        // Метод для проверки наличия четного числа в строке
+        public bool HasEvenNumber()
+        {
+            bool foundEven = false;
+            string[] parts = inputString.Split(new char[] { '.', '-', ' ', ',', ';', ':', '!', '?' }, StringSplitOptions.RemoveEmptyEntries); // Разделяем строку на части
+
+            foreach (var part in parts)
+            {
+                // Проверяем, является ли часть числом
+                if (int.TryParse(part, out int number))
+                {
+                    if (number % 2 == 0) // Проверка, является ли число четным
+                    {
+                        foundEven = true;
+                        break;
+                    }
+                }
+            }
+            return foundEven;
+        }
+    }
+
+    static void Main()
+    {
+        // Ввод строки с клавиатуры
+        Console.Write("Enter a string: ");
+        string input = Console.ReadLine();
+
+        // Пример 1: Используем конструктор с параметром
+        StringAnalyzer analyzer = new StringAnalyzer(input);
+
+        // Проверка, есть ли четное число в строке
+        if (analyzer.HasEvenNumber())
+        {
+            Console.WriteLine("The string contains at least one even number.");
+        }
+        else
+        {
+            Console.WriteLine("The string does not contain any even numbers.");
+        }
+    }
+}
