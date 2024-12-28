@@ -13,3 +13,28 @@
 3) о времени приготовления
 4) выборка данных по температуре
 5) выход
+static void FilterByTemperature()
+    {
+        Console.Write("Enter temperature to filter: ");
+        int temp = int.Parse(Console.ReadLine());
+
+        Console.WriteLine("Breads cooked at the specified temperature:");
+        for (int i = 0; i < breadCount; i++)
+        {
+            if (breads[i].Temperature == temp)
+            {
+                Console.WriteLine($"{breads[i].Name} (Mode: {breads[i].Mode}, Time: {breads[i].CookingTime} minutes)");
+            }
+        }
+
+        Console.WriteLine("Cakes cooked at the specified temperature:");
+        for (int i = 0; i < cakeCount; i++)
+        {
+            if (cakes[i].Temperature == temp)
+            {
+                Console.WriteLine($"{cakes[i].Name} (Mode: {cakes[i].Mode}, Time: {cakes[i].CookingTime} minutes)");
+                Console.WriteLine("Ingredients: " + string.Join(", ", cakes[i].Ingredients));
+            }
+        }
+    }
+}
