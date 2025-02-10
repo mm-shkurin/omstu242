@@ -70,5 +70,29 @@ class Subscriber {
 
 class Program
 {
-    static List<Subscriber> subscribers = new 
+    static List<Subscriber> subscribers = new List<Subscriber>();
+    
+    static void Main()
+    {
+     bool running = true;
+     
+     while (running){
+         Console.WriteLine("Menu:");
+         Console.WriteLine("1) Add subscriber");
+         Console.WriteLine("2) Add phone for subcriber");
+         Console.WriteLine("3) Search in a city");
+         Console.WriteLine("4) Search by phone number");
+         Console.WriteLine("5) Search by operator");
+         Console.WriteLine("6) Search by city operator");
+         Console.WriteLine("0) Exit");
+         Console.WriteLine("Choice:");
+         string choice = Console.ReadLine();
+         
+         switch (choice)
+         {
+             case
+         }
+
+     }
+    }
 }
