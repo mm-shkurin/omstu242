@@ -22,3 +22,53 @@ public class HelloWorld
 
 }
 }
+
+using System;
+using System.Collection.Generic;
+
+public class Phone
+{
+    public string Number {get;}
+    public string Operator {get;}
+    public string Year {get;}
+    public string City {get;}
+    
+    public Phone(string number, string operatorName, int year, string city)
+    {
+        Number = number;
+        Operator = operatorName;
+        Year = year;
+        City = city;
+    }
+    
+    public override string ToString()
+    {
+        return $"Number : {Number} , Operator: {Operator}, Year: {Year} , City: {City} " ;
+    }
+}
+
+class Subscriber {
+    public string FullName {get;}
+    public List<Phone> Phones{get;}
+    
+    public Subscriber(string fullName)
+    {
+        FullName = fullName;
+        Phones = new List<Phone> ();
+    }
+    
+    public void AddPhone(Phone phone)
+    {
+        Phones.Add(phone);
+    }
+    
+    public override string ToString()
+    {
+        return $"Subscriber: {FullName}, Count: {Phones.Count}";
+    }
+}
+
+class Program
+{
+    static List<Subscriber> subscribers = new 
+}
