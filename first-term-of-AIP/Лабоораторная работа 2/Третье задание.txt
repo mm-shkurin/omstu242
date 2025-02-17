@@ -1,0 +1,27 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(){
+        Console.WriteLine("skolko");
+        int k = 0;
+        int maxk = 0;
+        int n = Convert.ToInt32(Console.ReadLine());
+        for (int i = 1; i<=n;i++){
+            int a = Convert.ToInt32(Console.ReadLine());
+            if (a % 2 == 0) {
+            k++;
+            }
+            else{
+            if (k > maxk){
+                maxk = k;
+            }
+            k = 0 ;        
+            }
+
+    }
+        Console.WriteLine("otdv");
+        Console.WriteLine(maxk);
+
+}
+}

@@ -1,0 +1,68 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Row (m): ");
+        int m = int.Parse(Console.ReadLine());
+        Console.Write("Column (n): ");
+        int n = int.Parse(Console.ReadLine());
+
+        int[,] array = new int[m, n];
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                Console.Write($"read element [{i + 1},{j + 1}]: ");
+                array[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        Console.WriteLine("\nИсходный массив:");
+        PrintArray(array);
+
+        Console.WriteLine("\nТочки minimax:");
+        for (int i = 0; i < m; i++)
+        {
+            int rowMax = array[i, 0];
+            int colMaxIndex = 0;
+            for (int j = 0; j < n; j++)
+            {
+                if (array[i, j] > rowMax)
+                {
+                    rowMax = array[i, j];
+                    colMaxIndex = j;
+                }
+            }
+
+            int colMin = array[0, colMaxIndex];
+            for (int k = 0; k < m; k++)
+            {
+                if (array[k, colMaxIndex] < colMin)
+                {
+                    colMin = array[k, colMaxIndex];
+                }
+            }
+
+            if (rowMax == colMin)
+            {
+                Console.WriteLine($"Minimax Point: [{i + 1},{colMaxIndex + 1}] = {rowMax}");
+            }
+        }
+    }
+
+    static void PrintArray(int[,] array)
+    {
+        int rows = array.GetLength(0);
+        int cols = array.GetLength(1);
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write(array[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}

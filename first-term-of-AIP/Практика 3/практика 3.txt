@@ -1,0 +1,70 @@
+// Online C# Editor for free
+// Write, Edit and Run your C# code using C# Online Compiler
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine ("Enter a variable  m:");
+        int mlen = Convert.ToInt32(Console.ReadLine());
+        int[] mlist = FillArray(mlen);
+        Console.WriteLine ("Enter a variable  p:");
+        int plen = Convert.ToInt32(Console.ReadLine());
+        int[] p = FillArray(plen);
+        Console.WriteLine ("Enter a variable  n:");
+        int nlen = Convert.ToInt32(Console.ReadLine());
+        int[] n = FillArray(nlen);
+        
+        Console.WriteLine ("Print compos M:");
+        Console.WriteLine (Nech(mlist));
+        Console.WriteLine ("Print compos P:");
+        Console.WriteLine (Nech(p));
+        Console.WriteLine ("Print compos N:");
+        Console.WriteLine (Nech(n));
+        
+        Console.WriteLine ("Print sum M:");
+        Console.WriteLine (Tree(mlist));
+        Console.WriteLine ("Print sum P:");
+        Console.WriteLine (Tree(p));
+        Console.WriteLine ("Print sum N:");
+        Console.WriteLine (Tree(n));
+        
+        Console.WriteLine ("Print null M:");
+        Console.WriteLine (Null(mlist));
+        Console.WriteLine ("Print null P:");
+        Console.WriteLine (Null(p));
+        Console.WriteLine ("Print null N:");
+        Console.WriteLine (Null(n));
+    
+    }
+    static int Null(int[] list){
+        int len = 0;
+        foreach (int a in list){
+            if (a == 0){ len ++;}
+        }
+        return len;
+    }
+    static int Nech(int[] list){
+        int compos = 1;
+        foreach (int a in list){
+            if (a % 2 != 0){ compos = compos * a;}
+        }
+        return compos;
+    }
+    static int Tree(int[] list){
+        int sum = 0;
+        foreach (int a in list){
+            if (a % 3 == 0){ sum = sum + a;}
+        }
+        return sum;
+    }
+    static int[] FillArray(int size){
+    int[] m = new int[size];
+        for (int i = 0;i < size;i++){
+            Console.WriteLine ("Enter a variable  to list:");
+            m[i] = Convert.ToInt32(Console.ReadLine());
+    }
+        return m ;
+    }
+}

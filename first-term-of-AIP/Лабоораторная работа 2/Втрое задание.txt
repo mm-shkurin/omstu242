@@ -1,0 +1,98 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(){
+        int max1 = 0;
+        int max2 = 0;
+        Console.WriteLine("skolko");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i<=n;i++){
+            int a = Convert.ToInt32(Console.ReadLine());
+            if (a > max1) {
+            max2 = max1;
+            max1 = a;}
+            else if (a > max2 && a < max1) {
+            max2 = a;}
+
+    }
+        Console.WriteLine("otdv");
+        Console.WriteLine(max2);
+
+}
+}
+
+using System;
+using System.Collection.Generic;
+
+public class Phone
+{
+    public string Number {get;}
+    public string Operator {get;}
+    public string Year {get;}
+    public string City {get;}
+    
+    public Phone(string number, string operatorName, int year, string city)
+    {
+        Number = number;
+        Operator = operatorName;
+        Year = year;
+        City = city;
+    }
+    
+    public override string ToString()
+    {
+        return $"Number : {Number} , Operator: {Operator}, Year: {Year} , City: {City} " ;
+    }
+}
+
+class Subscriber {
+    public string FullName {get;}
+    public List<Phone> Phones{get;}
+    
+    public Subscriber(string fullName)
+    {
+        FullName = fullName;
+        Phones = new List<Phone> ();
+    }
+    
+    public void AddPhone(Phone phone)
+    {
+        Phones.Add(phone);
+    }
+    
+    public override string ToString()
+    {
+        return $"Subscriber: {FullName}, Count: {Phones.Count}";
+    }
+}
+
+class Program
+{
+    static List<Subscriber> subscribers = new List<Subscriber>();
+    
+    static void Main()
+    {
+     bool running = true;
+     
+     while (running){
+         Console.WriteLine("Menu:");
+         Console.WriteLine("1) Add subscriber");
+         Console.WriteLine("2) Add phone for subcriber");
+         Console.WriteLine("3) Search in a city");
+         Console.WriteLine("4) Search by phone number");
+         Console.WriteLine("5) Search by operator");
+         Console.WriteLine("6) Search by city operator");
+         Console.WriteLine("0) Exit");
+         Console.WriteLine("Choice:");
+         string choice = Console.ReadLine();
+         
+         switch (choice)
+         {
+             case
+         }
+
+     }
+    }
+}

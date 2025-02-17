@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine ("Enter a variable  m:");
+        int mlen = Convert.ToInt32(Console.ReadLine());
+         int[] m = new int[mlen];
+         for (int i = 0;i < mlen;i++){
+            Console.WriteLine ("Enter a variable  to list:");
+            m[i] = Convert.ToInt32(Console.ReadLine());
+            
+        }
+       int count = 0;
+        int sum = 0;
+        for (int i = 0; i < mlen; i++)
+        {
+            if (m[i] % 2 == 0)
+            {
+                count++;
+                sum = sum + m[i];
+            }
+        }
+        Console.WriteLine(sum/count);
+    }
+}
